@@ -31,6 +31,8 @@ assets/             Local images and fonts
 
 Scientist portraits were gathered from Wikimedia Commons and Wikipedia source pages. Biographical summaries were cross-checked against Nobel Prize, NASA, the Royal Institution, Newton Project, Darwin Correspondence Project, Museo Galileo, the Royal Society of Chemistry, and Stanford.
 
+The periodic-table layout and interaction are adapted from the MIT-licensed [The Element Lab Pro](https://github.com/NotMrRifat/The-Element-Lab-Pro) project.
+
 The science-experiment atlas and laboratory glassware illustrations were created for this project with OpenAI image generation. Prompt summaries are included under `assets/`.
 
 ## License
