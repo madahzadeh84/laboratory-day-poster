@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>جدول تناوبی Element-Lab</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./css/main.css">
+  <style>
+    @font-face{font-family:Vazirmatn;src:url('../assets/fonts/Vazirmatn-Arabic.woff2') format('woff2');font-weight:100 900;font-display:swap}
+    body{padding:26px 24px 42px;background:#07111f}.embed-shell{width:min(1400px,100%);margin:auto}.section-header{margin-bottom:22px}.section-header h1{margin:4px 0 8px;font-size:clamp(28px,4vw,48px)}.periodic-wrapper{background:linear-gradient(180deg,rgba(255,255,255,.025),rgba(255,255,255,.008))}.embed-credit{text-align:center;color:#7890a8;font-size:.68rem;margin-top:14px}@media(max-width:700px){body{padding:18px 12px 30px}}
+  </style>
+</head>
+<body>
+  <div id="app" class="app">
+    <main class="embed-shell">
+      <div class="section-header">
+        <span class="section-eyebrow">مرجع تعاملی</span>
+        <h1>جدول تناوبی عناصر</h1>
+        <p>روی هر عنصر کلیک کن تا اطلاعات کامل، مدل لایه‌های الکترونی، ویژگی‌های فیزیکی، کاربرد و تاریخچهٔ آن را ببینی.</p>
+      </div>
+      <div class="table-toolbar">
+        <input id="elementSearch" class="search-box" type="search" autocomplete="off" aria-label="جست‌وجوی عنصر" placeholder="جست‌وجوی نام، نماد یا عدد اتمی...">
+      </div>
+      <div class="legend">
+        <span class="legend-item"><i class="legend-dot alkali-dot"></i>فلز قلیایی</span>
+        <span class="legend-item"><i class="legend-dot alkaline-dot"></i>قلیایی خاکی</span>
+        <span class="legend-item"><i class="legend-dot transition-dot"></i>فلز واسطه</span>
+        <span class="legend-item"><i class="legend-dot metalloid-dot"></i>شبه‌فلز</span>
+        <span class="legend-item"><i class="legend-dot nonmetal-dot"></i>نافلز</span>
+        <span class="legend-item"><i class="legend-dot halogen-dot"></i>هالوژن</span>
+        <span class="legend-item"><i class="legend-dot noble-dot"></i>گاز نجیب</span>
+        <span class="legend-item"><i class="legend-dot post-transition-dot"></i>فلز پس‌واسطه</span>
+        <span class="legend-item"><i class="legend-dot lanthanide-dot"></i>لانتانید</span>
+        <span class="legend-item"><i class="legend-dot actinide-dot"></i>اکتینید</span>
+        <span class="legend-item"><i class="legend-dot unknown-dot"></i>ویژگی نامشخص</span>
+      </div>
+      <div class="periodic-wrapper"><div id="periodicTable" class="periodic-table"></div></div>
+      <section id="comparisonPanel" class="comparison-panel" hidden aria-labelledby="comparisonTitle">
+        <div class="comparison-header"><div><span class="section-eyebrow">مقایسه مستقیم</span><h2 id="comparisonTitle">مقایسه عناصر</h2></div><button id="clearComparisonBtn" class="btn-secondary" type="button">پاک کردن مقایسه</button></div>
+        <div id="comparisonContent"></div>
+      </section>
+      <p class="embed-credit">این کامپوننت از فایل‌های اصلی پروژهٔ محلی Element-Lab اجرا می‌شود.</p>
+    </main>
+  </div>
+
+  <div id="elementModal" class="modal-overlay" aria-hidden="true">
+    <div class="modal element-modal" role="dialog" aria-modal="true" aria-labelledby="modalName">
+      <button id="closeElementModalBtn" class="modal-close" type="button" aria-label="بستن مشخصات عنصر">✕</button>
+      <header class="element-modal-hero">
+        <button id="addToComparisonBtn" class="hero-compare-button" type="button" aria-label="افزودن عنصر به مقایسه"><span aria-hidden="true">⚖️</span><span>مقایسه</span></button>
+        <div class="atom-visual-wrap"><div id="modalAtomModel" class="element-atom-model" aria-label="مدل آموزشی لایه‌های الکترونی" aria-describedby="atomModelNote"></div><div id="modalShellLegend" class="shell-legend" dir="ltr"></div><small id="atomModelNote" class="atom-model-note">مدل آموزشی لایه‌ها؛ حلقه‌ها مسیر واقعی حرکت الکترون نیستند.</small></div>
+        <div class="element-identity"><span class="element-modal-kicker">شناسنامه عنصر</span><div class="element-title-row"><div id="modalSymbol" class="modal-element-symbol"></div><div><h2 id="modalName"></h2><div id="modalEnglishName" class="modal-subtitle" dir="ltr"></div></div></div><div class="element-quick-facts"><span>عدد اتمی <strong id="modalAtomic"></strong></span><span>دسته <strong id="modalCategory"></strong></span><span>حالت <strong id="modalState"></strong></span></div></div>
+      </header>
+      <div class="element-tabs" role="tablist" aria-label="بخش‌های مشخصات عنصر"><button class="element-tab active" type="button" role="tab" aria-selected="true" data-element-tab="overview">نمای کلی</button><button class="element-tab" type="button" role="tab" aria-selected="false" data-element-tab="physical">ویژگی‌های فیزیکی</button><button class="element-tab" type="button" role="tab" aria-selected="false" data-element-tab="story">کاربرد و تاریخچه</button></div>
+      <div class="element-modal-content">
+        <section class="element-tab-panel active" role="tabpanel" data-element-panel="overview"><div class="element-details compact-details"><div class="detail-card"><span>جرم اتمی</span><strong id="modalMass" class="scientific-value"></strong></div><div class="detail-card"><span>دوره</span><strong id="modalPeriod"></strong></div><div class="detail-card"><span>گروه</span><strong id="modalGroup"></strong></div><div class="detail-card"><span>الکترونگاتیوی</span><strong id="modalElectronegativity" class="scientific-value"></strong></div><div class="detail-card detail-card-wide configuration-card"><span>آرایش کامل الکترونی</span><strong id="modalConfiguration" class="scientific-value electron-configuration" dir="ltr"></strong></div><div class="detail-card"><span>توزیع لایه‌ای</span><strong id="modalShells" class="scientific-value shell-distribution" dir="ltr"></strong></div><div class="detail-card"><span>شعاع اتمی</span><strong id="modalRadius" class="scientific-value" dir="ltr"></strong></div><div class="detail-card"><span>حالت‌های اکسایش</span><strong id="modalOxidation" class="scientific-value" dir="ltr"></strong></div></div></section>
+        <section class="element-tab-panel" role="tabpanel" data-element-panel="physical" hidden><div class="physical-feature-grid"><article><span>🌡️</span><small>نقطه ذوب</small><strong id="modalMelting" class="scientific-value" dir="ltr"></strong></article><article><span>♨️</span><small>نقطه جوش</small><strong id="modalBoiling" class="scientific-value" dir="ltr"></strong></article><article><span>⚖️</span><small>چگالی</small><strong id="modalDensity" class="scientific-value" dir="ltr"></strong></article><article><span>📅</span><small>سال کشف</small><strong id="modalDiscovered"></strong></article></div><p class="data-note">مقادیر دما بر حسب کلوین و چگالی بر حسب گرم بر سانتی‌متر مکعب نمایش داده می‌شوند.</p></section>
+        <section class="element-tab-panel" role="tabpanel" data-element-panel="story" hidden><div class="element-story-grid"><section><span class="story-icon">🧰</span><h3>کاربردهای شناخته‌شده</h3><p id="modalUses"></p></section><section><span class="story-icon">⚛️</span><h3>نمونه ایزوتوپ‌ها</h3><div id="modalIsotopes" class="isotope-list"></div></section><section class="story-wide"><span class="story-icon">📜</span><h3>تاریخچه</h3><p id="modalHistory"></p></section></div></section>
+      </div>
+      <footer class="modal-actions"><a id="modalSourceLink" class="btn-secondary source-link" href="#" target="_blank" rel="noopener">مشاهده منبع علمی</a><span class="modal-source-note">داده‌های عددی: PubChem</span></footer>
+    </div>
+  </div>
+  <script type="module" src="./init.js"></script>
+</body>
+</html>

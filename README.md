@@ -24,7 +24,7 @@ Open `index.html` directly in a modern browser. No dependencies or build command
 index.html          Main poster and animated hero
 interactive.css     Museum panels and responsive styling
 interactive.js      Scientists, experiments, and periodic table data
-element-lab-data.js  Element data synchronized from the local Element-Lab project
+element-lab-embed/   Original Element-Lab table component, data, modal, and styles
 assets/             Local images and fonts
 ```
 
@@ -32,7 +32,7 @@ assets/             Local images and fonts
 
 Scientist portraits were gathered from Wikimedia Commons and Wikipedia source pages. Biographical summaries were cross-checked against Nobel Prize, NASA, the Royal Institution, Newton Project, Darwin Correspondence Project, Museo Galileo, the Royal Society of Chemistry, and Stanford.
 
-The periodic-table data, categories, colors, and grid placement were transferred from the author's local `Element-Lab` project in the same workspace.
+The periodic-table component runs the original `periodicTable.js`, data modules, modal, and `main.css` copied from the author's local `Element-Lab` project.
 
 The science-experiment atlas and laboratory glassware illustrations were created for this project with OpenAI image generation. Prompt summaries are included under `assets/`.
 
