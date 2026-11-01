@@ -8,7 +8,7 @@ An animated, responsive Persian poster for Laboratory Day, expanded into a small
 
 - Animated glassware and particle effects
 - Ten illustrated scientist stories with portraits, timelines, colors, and motion
-- Complete interactive periodic table with all 118 elements, search, and category filters
+- Complete interactive periodic table imported from the sibling local `Element-Lab` project, with all 118 Persian element names and scientific properties
 - Ten visual science experiments with materials, steps, and explanations
 - Responsive full-screen layout for desktop and mobile
 - Local Vazirmatn font files and no build step
@@ -24,6 +24,7 @@ Open `index.html` directly in a modern browser. No dependencies or build command
 index.html          Main poster and animated hero
 interactive.css     Museum panels and responsive styling
 interactive.js      Scientists, experiments, and periodic table data
+element-lab-data.js  Element data synchronized from the local Element-Lab project
 assets/             Local images and fonts
 ```
 
@@ -31,7 +32,7 @@ assets/             Local images and fonts
 
 Scientist portraits were gathered from Wikimedia Commons and Wikipedia source pages. Biographical summaries were cross-checked against Nobel Prize, NASA, the Royal Institution, Newton Project, Darwin Correspondence Project, Museo Galileo, the Royal Society of Chemistry, and Stanford.
 
-The periodic-table layout and interaction are adapted from the MIT-licensed [The Element Lab Pro](https://github.com/NotMrRifat/The-Element-Lab-Pro) project.
+The periodic-table data, categories, colors, and grid placement were transferred from the author's local `Element-Lab` project in the same workspace.
 
 The science-experiment atlas and laboratory glassware illustrations were created for this project with OpenAI image generation. Prompt summaries are included under `assets/`.
 
