@@ -1,0 +1,5 @@
+Generated with built-in image_gen; transparent backgrounds.
+Shared prompt: Premium photorealistic laboratory glassware studio photography. Thin borosilicate glass, realistic refraction, delicate highlights, turquoise and icy blue rim lighting, lavender reflections, no background, full object, no text, logos or people.
+flask: One Erlenmeyer flask half filled with turquoise liquid, tiny bubbles, fine graduation ticks.
+beaker: One cylindrical beaker with pouring spout, lavender liquid, bubbles and graduation ticks.
+tubes: One dark metallic rack with exactly three glass test tubes, cyan, mint and lavender liquid.

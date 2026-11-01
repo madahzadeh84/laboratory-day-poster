@@ -1,0 +1,3 @@
+Mode: built-in image_gen edits of the original three transparent assets.
+Shared prompt: Refined 2D editorial scientific illustration for a dark navy Laboratory Day poster. Preserve subject and full silhouette. Flat clean shapes, fine cyan outlines, restrained tonal areas, dark navy tinted glass, minimal shading and highlights. Muted mint, cyan, lavender. Transparent background, no text, floor or heavy shadows.
+Subjects: Erlenmeyer flask with turquoise liquid; pouring beaker with lavender liquid; compact rack with three cyan, mint and lavender test tubes.

@@ -1,0 +1,4 @@
+Mode: built-in imagegen
+Use case: scientific-educational
+Asset: 2-column × 5-row illustration atlas for the interactive experiments gallery.
+Prompt summary: Ten equal dark-navy editorial science panels with a consistent mint, cyan, lavender and magenta palette; milk rainbow, red-cabbage pH indicator, walking water, density tower, lava lamp, paper chromatography, salt crystals, magnetic field, static-electricity balloon and prism spectrum. No labels, letters, numbers or watermark.

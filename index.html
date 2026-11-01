@@ -1,0 +1,1498 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#061426">
+    <title>روز آزمایشگاه | جشن کنجکاوی و کشف</title>
+    <link rel="stylesheet" href="interactive.css">
+    <style>
+        :root {
+            --bg: #051220;
+            --mint: #67f7db;
+            --cyan: #51c9ff;
+            --violet: #a09bff;
+            --text: #f5fbff;
+            --muted: #9db5c9
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html,
+        body {
+            margin: 0;
+            min-height: 100%;
+            background: var(--bg);
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            color: var(--text)
+        }
+
+        body {
+            overflow-x: hidden
+        }
+
+        .poster {
+            position: relative;
+            min-height: 100svh;
+            isolation: isolate;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            background: radial-gradient(ellipse 54% 46% at 74% 47%, #123a5377 0%, transparent 75%), radial-gradient(ellipse 45% 45% at 12% 92%, #20305e66 0%, transparent 75%), linear-gradient(135deg, #07182c, #061321 62%, #06111d)
+        }
+
+        .poster:before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background-image: linear-gradient(#a0d6ff08 1px, transparent 1px), linear-gradient(90deg, #a0d6ff08 1px, transparent 1px);
+            background-size: 58px 58px;
+            mask-image: linear-gradient(to bottom, #000b, transparent 90%)
+        }
+
+        .poster:after {
+            content: '';
+            position: absolute;
+            inset: 18px;
+            border: 1px solid #a2d9ff23;
+            border-radius: 20px;
+            pointer-events: none
+        }
+
+        #particles {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+            opacity: .7
+        }
+
+        .top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            padding: 45px clamp(34px, 6vw, 100px) 15px;
+            position: relative;
+            z-index: 2
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            color: #d8f9ff;
+            font-weight: 800;
+            font-size: 14px;
+            letter-spacing: .01em
+        }
+
+        .brand svg {
+            width: 42px;
+            height: 42px
+        }
+
+        .top .tag {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            color: #a5c6d8;
+            border: 1px solid #a5c6d82c;
+            border-radius: 999px;
+            padding: 9px 16px;
+            font-size: 12px;
+            letter-spacing: .1em;
+            direction: ltr
+        }
+
+        .tag i {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--mint);
+            box-shadow: 0 0 14px var(--mint);
+            animation: blink 2s infinite
+        }
+
+        .main {
+            flex: 1;
+            display: grid;
+            grid-template-columns: minmax(340px, 1fr) minmax(440px, 1.15fr);
+            align-items: center;
+            gap: 30px;
+            max-width: 1600px;
+            width: 100%;
+            margin: auto;
+            padding: 0 clamp(35px, 7vw, 115px);
+            direction: rtl;
+            position: relative
+        }
+
+        .copy {
+            position: relative;
+            z-index: 4;
+            padding-bottom: 30px
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 13px;
+            color: var(--mint);
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: .05em;
+            margin-bottom: 25px
+        }
+
+        .eyebrow:before {
+            content: '';
+            width: 32px;
+            height: 1px;
+            background: var(--mint)
+        }
+
+        h1 {
+            font-size: clamp(75px, 9.5vw, 155px);
+            line-height: 1.16;
+            letter-spacing: -.075em;
+            margin: 0;
+            font-weight: 900;
+            text-shadow: 0 9px 45px #02081180
+        }
+
+        h1 .light {
+            display: block;
+            background: linear-gradient(102deg, #c5fff1 4%, #60ddfd 55%, #aaa1ff 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            filter: drop-shadow(0 0 28px #42dceb25)
+        }
+
+        .sub {
+            font-weight: 750;
+            font-size: clamp(18px, 2.05vw, 30px);
+            margin: 24px 0 15px;
+            color: #dbeef7
+        }
+
+        .desc {
+            max-width: 490px;
+            font-size: clamp(13px, 1.2vw, 17px);
+            line-height: 2.35;
+            color: var(--muted);
+            font-weight: 400
+        }
+
+        .line {
+            width: 85px;
+            height: 3px;
+            margin: 30px 0 23px;
+            background: linear-gradient(90deg, var(--mint), var(--cyan), transparent);
+            border-radius: 5px
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 11px;
+            font-size: 13px;
+            color: #d9f4fe;
+            border: 1px solid #6fead549;
+            background: #53e5cb0d;
+            border-radius: 9px;
+            padding: 10px 16px
+        }
+
+        .pill span {
+            font-size: 18px;
+            color: var(--mint)
+        }
+
+        .art {
+            position: relative;
+            width: 100%;
+            min-height: 620px;
+            display: grid;
+            place-items: center;
+            transform: translateX(-2%)
+        }
+
+        .halo {
+            position: absolute;
+            width: min(94%, 690px);
+            aspect-ratio: 1;
+            border: 1px solid #80cafa25;
+            border-radius: 50%;
+            box-shadow: inset 0 0 90px #1a9fc412, 0 0 100px #2a81cb0a;
+            animation: breath 8s ease-in-out infinite
+        }
+
+        .halo:before,
+        .halo:after {
+            content: '';
+            position: absolute;
+            inset: 12%;
+            border: 1px dashed #87d5fa26;
+            border-radius: 50%;
+            animation: spin 110s linear infinite
+        }
+
+        .halo:after {
+            inset: 29%;
+            border-style: solid;
+            border-color: #7dcfee22;
+            animation-direction: reverse
+        }
+
+        .halo .cross {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #6ddfff;
+            box-shadow: 0 0 15px #6ddfff
+        }
+
+        .hero-svg {
+            width: min(100%, 740px);
+            overflow: visible;
+            filter: drop-shadow(0 18px 55px #020a1988);
+            animation: float 7s ease-in-out infinite
+        }
+
+        .liquid {
+            animation: liquid 5s ease-in-out infinite alternate;
+            transform-origin: center
+        }
+
+        .bubble {
+            animation: up var(--dur, 4s) linear infinite;
+            opacity: 0
+        }
+
+        .bubble.b2 {
+            animation-delay: -1.5s
+        }
+
+        .bubble.b3 {
+            animation-delay: -2.8s
+        }
+
+        .bubble.b4 {
+            animation-delay: -3.5s
+        }
+
+        .wave {
+            animation: wave 5s ease-in-out infinite alternate;
+            transform-origin: center
+        }
+
+        .flask-glow {
+            filter: drop-shadow(0 0 18px #42f4d766)
+        }
+
+        .orbit {
+            position: absolute;
+            width: 110px;
+            height: 110px;
+            animation: orbit 10s ease-in-out infinite;
+            filter: drop-shadow(0 0 15px #63ddff66)
+        }
+
+        .orbit.one {
+            top: 11%;
+            right: 2%
+        }
+
+        .orbit.two {
+            bottom: 15%;
+            left: 0;
+            width: 75px;
+            height: 75px;
+            animation-delay: -3s
+        }
+
+        .orbit.three {
+            top: 10%;
+            left: 18%;
+            width: 56px;
+            height: 56px;
+            animation-delay: -5s
+        }
+
+        .stat {
+            position: absolute;
+            border: 1px solid #9ad5ff34;
+            background: #0d2638b8;
+            backdrop-filter: blur(12px);
+            padding: 12px 16px;
+            border-radius: 12px;
+            color: #a7d7e9;
+            font: 600 12px/1.9 'Vazirmatn', sans-serif;
+            box-shadow: 0 8px 40px #02122550
+        }
+
+        .stat strong {
+            display: block;
+            color: #edffff;
+            font-size: 15px;
+            font-weight: 800;
+            direction: ltr;
+            letter-spacing: .03em
+        }
+
+        .stat.s1 {
+            right: 2%;
+            bottom: 20%
+        }
+
+        .stat.s2 {
+            left: 1%;
+            top: 27%
+        }
+
+        .stat .dot {
+            display: inline-block;
+            width: 6px;
+            height: 6px;
+            background: var(--mint);
+            border-radius: 50%;
+            margin-left: 6px;
+            box-shadow: 0 0 10px var(--mint)
+        }
+
+        .bottom {
+            position: relative;
+            z-index: 3;
+            padding: 12px clamp(35px, 6vw, 100px) 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+            color: #7f9bae;
+            font-size: 12px
+        }
+
+        .bottom .latin {
+            direction: ltr;
+            letter-spacing: .2em;
+            font-size: 11px;
+            color: #80b1c7
+        }
+
+        .decor {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: -1
+        }
+
+        .decor .num {
+            position: absolute;
+            left: 6%;
+            bottom: 12%;
+            font: 700 90px/1 Arial, sans-serif;
+            letter-spacing: -.08em;
+            color: #3ea9d20b;
+            transform: rotate(-90deg)
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(4px) rotate(-1deg)
+            }
+
+            50% {
+                transform: translateY(-15px) rotate(1deg)
+            }
+        }
+
+        @keyframes orbit {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(-6deg)
+            }
+
+            50% {
+                transform: translateY(-18px) rotate(9deg)
+            }
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        @keyframes breath {
+            50% {
+                transform: scale(1.045);
+                opacity: .65
+            }
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: .4
+            }
+        }
+
+        @keyframes liquid {
+            to {
+                transform: rotate(2deg) translateY(3px)
+            }
+        }
+
+        @keyframes wave {
+            to {
+                transform: rotate(-2deg)
+            }
+        }
+
+        @keyframes up {
+            0% {
+                transform: translateY(20px);
+                opacity: 0
+            }
+
+            20% {
+                opacity: .9
+            }
+
+            80% {
+                opacity: .8
+            }
+
+            100% {
+                transform: translateY(-75px);
+                opacity: 0
+            }
+        }
+
+        @media(max-width:850px) {
+            .poster {
+                min-height: 100svh
+            }
+
+            .top {
+                padding: 32px 40px 0
+            }
+
+            .main {
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+                padding: 38px 38px 0
+            }
+
+            .copy {
+                align-self: stretch;
+                padding: 0
+            }
+
+            .copy h1 {
+                font-size: clamp(65px, 13vw, 105px)
+            }
+
+            .copy .sub {
+                margin: 17px 0 5px
+            }
+
+            .desc {
+                max-width: 600px
+            }
+
+            .art {
+                min-height: 460px;
+                max-width: 600px;
+                margin: -10px auto 0
+            }
+
+            .stat.s1 {
+                bottom: 12%
+            }
+
+            .bottom {
+                padding: 0 38px 32px
+            }
+
+            .eyebrow {
+                margin-bottom: 12px
+            }
+
+            .line {
+                margin: 19px 0 15px
+            }
+        }
+
+        @media(max-width:500px) {
+            .poster:after {
+                inset: 10px;
+                border-radius: 12px
+            }
+
+            .top {
+                padding: 26px 24px 0
+            }
+
+            .top .tag {
+                font-size: 10px;
+                padding: 7px 9px
+            }
+
+            .brand {
+                font-size: 12px;
+                gap: 7px
+            }
+
+            .brand svg {
+                width: 32px;
+                height: 32px
+            }
+
+            .main {
+                padding: 40px 28px 0
+            }
+
+            .copy h1 {
+                font-size: clamp(62px, 16vw, 85px)
+            }
+
+            .eyebrow {
+                font-size: 11px
+            }
+
+            .sub {
+                font-size: 18px
+            }
+
+            .desc {
+                font-size: 12px;
+                line-height: 2.2
+            }
+
+            .art {
+                min-height: 335px;
+                width: 110%;
+                margin-right: -5%;
+                margin-top: 10px
+            }
+
+            .orbit.one {
+                width: 65px;
+                height: 65px;
+                right: 0
+            }
+
+            .orbit.two {
+                width: 45px;
+                height: 45px
+            }
+
+            .orbit.three {
+                width: 35px;
+                height: 35px
+            }
+
+            .stat {
+                font-size: 9px;
+                padding: 6px 9px
+            }
+
+            .stat strong {
+                font-size: 11px
+            }
+
+            .stat.s2 {
+                top: 15%;
+                left: 0
+            }
+
+            .stat.s1 {
+                right: 0;
+                bottom: 8%
+            }
+
+            .bottom {
+                padding: 16px 28px 28px;
+                font-size: 10px
+            }
+
+            .bottom .latin {
+                font-size: 8px;
+                letter-spacing: .1em
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+
+            *,
+            *:before,
+            *:after {
+                animation: none !important;
+                scroll-behavior: auto !important
+            }
+        }
+
+        /* Immersive editorial poster */
+        :root {
+            --bg: #030b16;
+            --muted: #a3b8ca
+        }
+
+        .poster {
+            background: radial-gradient(ellipse at 24% 46%, #12657840, transparent 43%), radial-gradient(ellipse at 88% 12%, #6650b024, transparent 38%), linear-gradient(125deg, #030b16, #071a2a 58%, #081321);
+        }
+
+        .poster:before {
+            background-size: 72px 72px;
+            opacity: .7;
+            mask-image: radial-gradient(ellipse at 30% 45%, #000, transparent 75%)
+        }
+
+        .poster:after {
+            inset: 20px;
+            border-radius: 3px;
+            border-color: #a2d9ff26;
+            background: linear-gradient(90deg, #69f6da, #69f6da) top right/64px 2px no-repeat, linear-gradient(#69f6da, #69f6da) top right/2px 64px no-repeat, linear-gradient(90deg, #889dff, #889dff) bottom left/64px 2px no-repeat;
+        }
+
+        .top {
+            padding-top: 48px;
+        }
+
+        .brand {
+            font-weight: 600;
+            font-size: 12px;
+            color: #b9d4df
+        }
+
+        .brand svg {
+            padding: 7px;
+            width: 48px;
+            height: 48px;
+            border: 1px solid #82e7df35;
+            border-radius: 14px;
+            background: #76e8dc08
+        }
+
+        .top .tag {
+            font-size: 9px;
+            letter-spacing: .17em;
+            border-radius: 4px;
+            padding: 10px 14px
+        }
+
+        .main {
+            grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr);
+            gap: 12px;
+            padding-top: 30px;
+            padding-bottom: 24px
+        }
+
+        .eyebrow {
+            font-size: 12px;
+            letter-spacing: 0;
+            margin-bottom: 22px
+        }
+
+        h1 {
+            font-size: clamp(72px, 8.4vw, 140px);
+            font-weight: 900;
+            letter-spacing: -.065em;
+            line-height: 1.42
+        }
+
+        h1 .light {
+            background: linear-gradient(110deg, #b8fff0 5%, #65edda 42%, #74c8f7 78%, #baa9ff);
+            background-clip: text;
+            -webkit-background-clip: text;
+            filter: drop-shadow(0 0 34px #48e9d72b)
+        }
+
+        .sub {
+            font-size: clamp(17px, 1.65vw, 25px);
+            line-height: 1.9;
+            margin-top: 12px;
+            font-weight: 600
+        }
+
+        .desc {
+            font-size: 14px;
+            line-height: 2.3;
+            max-width: 430px
+        }
+
+        .pill {
+            border-radius: 4px;
+            padding: 12px 17px;
+            font-size: 12px;
+            background: linear-gradient(110deg, #53e5cb16, #53e5cb03);
+            border-color: #6fead538
+        }
+
+        .art {
+            min-height: 610px;
+            transform: translateX(-1%);
+        }
+
+        .art:before {
+            content: '';
+            position: absolute;
+            width: 78%;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background: radial-gradient(circle, #65ffdc13, transparent 67%);
+            box-shadow: 0 0 110px #49f5df0c;
+        }
+
+        .art:after {
+            content: 'FIG. 01 / THE ART OF DISCOVERY';
+            position: absolute;
+            bottom: 1%;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            font: 9px monospace;
+            letter-spacing: .21em;
+            color: #7ea9bc;
+            direction: ltr
+        }
+
+        .halo {
+            width: 95%;
+            border-color: #80cafa25;
+            background: repeating-conic-gradient(from 0deg, #9ce6ff25 0deg .3deg, transparent .3deg 6deg);
+            mask-image: radial-gradient(circle, transparent 68%, #000 68.2%, #000 71%, transparent 71.2%);
+            animation: spin 160s linear infinite;
+        }
+
+        .hero-svg {
+            position: relative;
+            z-index: 1;
+            filter: drop-shadow(0 25px 25px #0008) drop-shadow(0 0 45px #44ddcb18)
+        }
+
+        .stat {
+            z-index: 2;
+            border-radius: 5px;
+            font-size: 10px;
+            padding: 12px 15px;
+            background: linear-gradient(130deg, #123345de, #091a2de8);
+            border-color: #9ad5ff30;
+            box-shadow: 0 15px 35px #0004;
+        }
+
+        .stat:before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            right: 12px;
+            width: 28px;
+            height: 2px;
+            background: var(--mint);
+            box-shadow: 0 0 12px #67f7db80
+        }
+
+        .stat strong {
+            font: 11px/2 monospace;
+            margin-top: 3px;
+            letter-spacing: .08em
+        }
+
+        .stat.s1 {
+            right: 0;
+            bottom: 15%
+        }
+
+        .stat.s2 {
+            left: -2%;
+            top: 22%
+        }
+
+        .orbit {
+            opacity: .75
+        }
+
+        .orbit.one {
+            width: 85px;
+            top: 5%;
+            right: 8%
+        }
+
+        .bottom {
+            padding-top: 22px;
+            padding-bottom: 42px;
+            font-size: 10px;
+        }
+
+        .bottom:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 6%;
+            right: 6%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #8bc5df38, transparent)
+        }
+
+        .bottom .latin {
+            font: 9px monospace;
+            letter-spacing: .15em
+        }
+
+        .edition {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 22px;
+            direction: ltr;
+            justify-content: flex-end;
+            color: #728fa4;
+            font: 10px monospace;
+            letter-spacing: .15em
+        }
+
+        .edition b {
+            color: #9ff6e6;
+            font-weight: 400;
+            border: 1px solid #8ae2d842;
+            padding: 5px 7px
+        }
+
+        .science-strip {
+            display: flex;
+            gap: 25px;
+            margin-top: 27px;
+            color: #7395a9;
+            font-size: 10px;
+        }
+
+        .science-strip span {
+            display: flex;
+            align-items: center;
+            gap: 7px
+        }
+
+        .science-strip i {
+            font: 12px monospace;
+            color: #78d6d1;
+            font-style: normal
+        }
+
+        .decor .num {
+            font-size: 150px;
+            left: -125px;
+            bottom: 38%;
+            letter-spacing: .06em;
+            color: #68bddd07
+        }
+
+        @media(min-width:1500px) {
+            .art {
+                min-height: 700px
+            }
+        }
+
+        @media(max-width:1000px) and (min-width:851px) {
+            .main {
+                padding-inline: 48px
+            }
+
+            h1 {
+                font-size: 76px
+            }
+
+            .art {
+                min-height: 530px
+            }
+
+            .stat.s2 {
+                left: -5%
+            }
+        }
+
+        @media(max-width:850px) {
+            .main {
+                padding-top: 38px;
+                gap: 5px
+            }
+
+            .copy h1 {
+                font-size: clamp(70px, 12vw, 100px);
+                line-height: 1.35
+            }
+
+            .edition {
+                justify-content: flex-start;
+                margin-bottom: 18px
+            }
+
+            .art {
+                min-height: 470px;
+                max-width: 560px
+            }
+
+            .desc {
+                max-width: 580px
+            }
+
+            .science-strip {
+                margin-top: 20px
+            }
+
+            .stat.s2 {
+                left: 0
+            }
+
+            .bottom {
+                padding-top: 22px
+            }
+        }
+
+        @media(max-width:500px) {
+            .poster:after {
+                inset: 10px
+            }
+
+            .top {
+                padding: 28px 26px 0;
+                gap: 10px
+            }
+
+            .brand {
+                font-size: 10px;
+                max-width: 165px
+            }
+
+            .brand svg {
+                width: 36px;
+                height: 36px;
+                flex-shrink: 0;
+                padding: 4px
+            }
+
+            .top .tag {
+                font-size: 0;
+                padding: 10px;
+                border-radius: 50%
+            }
+
+            .top .tag i {
+                width: 6px;
+                height: 6px
+            }
+
+            .main {
+                padding: 35px 29px 16px
+            }
+
+            .copy h1 {
+                font-size: clamp(55px, 14vw, 72px)
+            }
+
+            .edition {
+                font-size: 8px;
+                gap: 12px
+            }
+
+            .eyebrow {
+                font-size: 10px
+            }
+
+            .sub {
+                font-size: 16px
+            }
+
+            .desc {
+                font-size: 12px
+            }
+
+            .pill {
+                font-size: 10px;
+                padding: 10px 12px
+            }
+
+            .science-strip {
+                gap: 17px;
+                font-size: 9px
+            }
+
+            .art {
+                min-height: 345px;
+                margin-top: 16px
+            }
+
+            .stat {
+                font-size: 8px;
+                padding: 8px
+            }
+
+            .stat strong {
+                font-size: 9px
+            }
+
+            .stat.s1 {
+                bottom: 12%
+            }
+
+            .art:after {
+                font-size: 7px;
+                bottom: 0
+            }
+
+            .bottom {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+                font-size: 9px;
+                line-height: 1.9
+            }
+        }
+
+        @media print {
+            @page {
+                size: A4 landscape;
+                margin: 0
+            }
+
+            * {
+                animation: none !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact
+            }
+
+            .poster {
+                min-height: 210mm;
+                height: 210mm
+            }
+
+            .top {
+                padding-top: 35px
+            }
+
+            .main {
+                display: grid;
+                grid-template-columns: 1fr 1.1fr;
+                padding: 0 60px;
+            }
+
+            .copy h1 {
+                font-size: 86px
+            }
+
+            .art {
+                min-height: 480px
+            }
+
+            .bottom {
+                padding-bottom: 30px
+            }
+        }
+
+        /* Fit the complete composition inside the available screen. */
+        @media screen {
+
+            html,
+            body {
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+            }
+
+            body {
+                background: radial-gradient(ellipse at 30% 45%, #0b2938, #030b16 75%);
+            }
+
+            .poster {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: var(--poster-width, 100vw);
+                min-height: var(--poster-height, 100dvh);
+                transform-origin: top left;
+                transform: translate(var(--poster-x, 0px), var(--poster-y, 0px)) scale(var(--poster-scale, 1));
+            }
+        }
+
+        /* Polished glass and molecular sculpture. */
+        .orbit.one {
+            width: 106px;
+            height: 106px;
+            opacity: 1;
+        }
+
+        .orbit.two {
+            opacity: .9;
+        }
+
+        .orbit.three {
+            opacity: .9;
+        }
+
+        .orbit {
+            filter: drop-shadow(0 8px 8px #0006) drop-shadow(0 0 14px #68dfe82b);
+        }
+
+        .orbit g[stroke] {
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .flask-glow {
+            filter: drop-shadow(0 0 12px #42f4d735) drop-shadow(0 12px 16px #00132165);
+        }
+
+        .hero-svg {
+            filter: drop-shadow(0 30px 24px #0006) drop-shadow(0 0 55px #44ddcb20);
+        }
+
+        @media(max-width:500px) {
+            .orbit.one {
+                width: 70px;
+                height: 70px;
+            }
+        }
+
+        /* Three independent photographic cutouts, each with its own motion. */
+        .glass-scene {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            aspect-ratio: 760 / 680;
+            direction: ltr;
+            isolation: isolate;
+        }
+
+        .glass-scene:before {
+            content: '';
+            position: absolute;
+            left: 8%;
+            right: 5%;
+            bottom: 6%;
+            height: 10%;
+            border-radius: 50%;
+            background: radial-gradient(ellipse, #48dcca10, transparent 70%);
+            filter: blur(12px);
+        }
+
+        .glass-object {
+            position: absolute;
+            display: block;
+            object-fit: contain;
+            transform-origin: 50% 80%;
+            filter: drop-shadow(0 5px 7px #0002);
+            will-change: transform;
+        }
+
+        .glass-flask {
+            left: 24%;
+            bottom: 6%;
+            width: 51%;
+            height: 90%;
+            z-index: 3;
+            animation: flask-drift 7.5s ease-in-out infinite;
+        }
+
+        .glass-beaker {
+            left: 0;
+            bottom: 12%;
+            width: 36%;
+            height: 51%;
+            z-index: 2;
+            animation: beaker-drift 6.4s ease-in-out -2s infinite;
+        }
+
+        .glass-tubes {
+            right: -1%;
+            bottom: 15%;
+            width: 36%;
+            height: 66%;
+            z-index: 1;
+            animation: tubes-drift 8.6s ease-in-out -4s infinite;
+        }
+
+        .glass-definitions {
+            position: absolute;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .orbit {
+            z-index: 3;
+        }
+
+        .halo {
+            z-index: 0;
+        }
+
+        @keyframes flask-drift {
+
+            0%,
+            100% {
+                transform: translateY(4px) rotate(-2deg)
+            }
+
+            50% {
+                transform: translateY(-14px) rotate(1.5deg)
+            }
+        }
+
+        @keyframes beaker-drift {
+
+            0%,
+            100% {
+                transform: translateY(-5px) rotate(-7deg)
+            }
+
+            50% {
+                transform: translateY(10px) rotate(-2deg)
+            }
+        }
+
+        @keyframes tubes-drift {
+
+            0%,
+            100% {
+                transform: translateY(6px) rotate(6deg)
+            }
+
+            50% {
+                transform: translateY(-12px) rotate(2deg)
+            }
+        }
+
+        @media(max-width:500px) {
+            .glass-scene {
+                width: 104%;
+            }
+        }
+
+        @media(prefers-reduced-motion:reduce) {
+            .glass-object {
+                animation: none;
+                will-change: auto;
+            }
+        }
+
+        @media print {
+            .glass-object {
+                animation: none;
+                will-change: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="poster">
+        <canvas id="particles" aria-hidden="true"></canvas>
+        <div class="decor"><span class="num">SCIENCE</span></div>
+        <header class="top">
+            <div class="brand"><svg viewBox="0 0 44 44" fill="none" aria-hidden="true">
+                    <circle cx="22" cy="22" r="4.3" fill="#73F6DB" />
+                    <ellipse cx="22" cy="22" rx="20" ry="8" stroke="#66DFF3" stroke-width="1.5"
+                        transform="rotate(60 22 22)" />
+                    <ellipse cx="22" cy="22" rx="20" ry="8" stroke="#66DFF3" stroke-width="1.5"
+                        transform="rotate(-60 22 22)" />
+                    <ellipse cx="22" cy="22" rx="20" ry="8" stroke="#66DFF3" stroke-width="1.5" />
+                    <circle cx="7" cy="24" r="2.5" fill="#BCA8FF" />
+                </svg><span>آزمایشگاه؛ نقطه آغاز کشف</span></div>
+            <div class="tag"><i></i> SCIENCE • DISCOVERY • INNOVATION</div>
+        </header>
+        <section class="main">
+            <div class="copy">
+                <div class="edition"><b>01</b> LABORATORY DAY <span> / </span> CELEBRATING SCIENCE</div>
+                <div class="eyebrow">به افتخار ذهن‌های کنجکاو و جست‌وجوگر</div>
+                <h1>روز <span class="light">آزمایشگاه</span></h1>
+                <div class="sub">جایی که پرسش‌ها به کشف تبدیل می‌شوند.</div>
+                <p class="desc">در هر قطره، جهانی از شگفتی نهفته است؛ در هر آزمایش، گامی به سوی شناخت. امروز، روز
+                    پاسداشت علم، تجربه و انسان‌هایی است که مرزهای دانایی را جابه‌جا می‌کنند.</p>
+                <div class="line"></div>
+                <div class="pill"><span>✧</span> تجربه کن · کشف کن · جهان را تغییر بده</div>
+                <div class="science-strip"><span><i>01 /</i> کنجکاوی</span><span><i>02 /</i> تجربه</span><span><i>03
+                            /</i> کشف</span></div>
+                <nav class="experience-nav" aria-label="بخش‌های تعاملی">
+                    <button class="experience-btn" type="button" data-open-museum="scientists"><b>10</b> دانشمند بزرگ</button>
+                    <button class="experience-btn" type="button" data-open-museum="periodic"><b>118</b> جدول تناوبی</button>
+                    <button class="experience-btn" type="button" data-open-museum="experiments"><b>10</b> آزمایش جذاب</button>
+                </nav>
+            </div>
+            <div class="art" aria-label="تصویر متحرک ظروف شیشه‌ای آزمایشگاه و ساختار مولکولی">
+                <figure class="scientist-cameo" aria-label="ماری کوری">
+                    <img src="assets/scientists/Marie_Curie.jpg" alt="پرتره ماری کوری" decoding="async">
+                </figure>
+                <div class="halo"><i class="cross"></i></div>
+                <svg class="orbit one" viewBox="0 0 110 110" aria-hidden="true">
+                    <g stroke="#7FEAFF" stroke-width="2" fill="none">
+                        <path d="M20 42 47 25 75 43 75 73 47 88 20 72Z" />
+                        <path d="M47 25 47 55 75 73M47 55 20 72M47 55 75 43" />
+                    </g>
+                    <g fill="url(#moleculePearl)" stroke="#b3ffed" stroke-opacity=".45" stroke-width=".7">
+                        <circle cx="20" cy="42" r="6" />
+                        <circle cx="75" cy="73" r="7" />
+                        <circle cx="47" cy="25" r="4" />
+                    </g>
+                    <circle cx="47" cy="55" r="10" fill="url(#moleculeViolet)" />
+                </svg>
+                <svg class="orbit two" viewBox="0 0 90 90" aria-hidden="true">
+                    <g fill="none" stroke="#93B9FF" stroke-width="2">
+                        <ellipse cx="45" cy="45" rx="37" ry="14" transform="rotate(55 45 45)" />
+                        <ellipse cx="45" cy="45" rx="37" ry="14" transform="rotate(-55 45 45)" />
+                        <ellipse cx="45" cy="45" rx="37" ry="14" />
+                    </g>
+                    <circle cx="45" cy="45" r="9" fill="url(#moleculePearl)" />
+                </svg>
+                <svg class="orbit three" viewBox="0 0 60 60" aria-hidden="true">
+                    <path d="M7 45 19 15 41 19 52 45 30 53Z" fill="none" stroke="#A19BFF" stroke-width="2" />
+                    <g fill="url(#moleculePearl)">
+                        <circle cx="7" cy="45" r="4" />
+                        <circle cx="19" cy="15" r="5" />
+                        <circle cx="41" cy="19" r="4" />
+                        <circle cx="52" cy="45" r="6" />
+                    </g>
+                </svg>
+                <div class="glass-scene" role="group" aria-label="Animated laboratory glassware">
+                    <img class="glass-object glass-beaker" src="assets/glass-beaker-2d.png"
+                        alt="&#1576;&#1588;&#1585; &#1576;&#1575; &#1605;&#1575;&#1740;&#1593; &#1576;&#1606;&#1601;&#1588;"
+                        decoding="async">
+                    <img class="glass-object glass-tubes" src="assets/glass-tubes-2d.png"
+                        alt="&#1604;&#1608;&#1604;&#1607;&#8204;&#1607;&#1575;&#1740; &#1570;&#1586;&#1605;&#1575;&#1740;&#1588; &#1585;&#1606;&#1711;&#1740;"
+                        decoding="async">
+                    <img class="glass-object glass-flask" src="assets/glass-flask-2d.png"
+                        alt="&#1575;&#1585;&#1604;&#1606; &#1576;&#1575; &#1605;&#1575;&#1740;&#1593; &#1601;&#1740;&#1585;&#1608;&#1586;&#1607;&#8204;&#1575;&#1740;"
+                        decoding="async" fetchpriority="high">
+                </div>
+                <svg class="glass-definitions" width="0" height="0" aria-hidden="true">
+                    <defs>
+                        <linearGradient id="glassRim" x1="0" y1="0" x2="1" y2="0">
+                            <stop stop-color="#62b9ce" />
+                            <stop offset=".2" stop-color="#efffff" />
+                            <stop offset=".48" stop-color="#7bbdce" />
+                            <stop offset=".8" stop-color="#ddffff" />
+                            <stop offset="1" stop-color="#69b7d2" />
+                        </linearGradient>
+                        <linearGradient id="glassShine" x1="0" y1="0" x2="1" y2=".4">
+                            <stop stop-color="#fff" stop-opacity=".65" />
+                            <stop offset=".35" stop-color="#b5ffff" stop-opacity=".12" />
+                            <stop offset="1" stop-color="#fff" stop-opacity="0" />
+                        </linearGradient>
+                        <radialGradient id="moleculePearl" cx="30%" cy="25%" r="75%">
+                            <stop stop-color="#fff" />
+                            <stop offset=".22" stop-color="#b1fff0" />
+                            <stop offset=".6" stop-color="#45cdbb" />
+                            <stop offset="1" stop-color="#15536d" />
+                        </radialGradient>
+                        <radialGradient id="moleculeViolet" cx="28%" cy="22%" r="80%">
+                            <stop stop-color="#fff" />
+                            <stop offset=".25" stop-color="#d3c5ff" />
+                            <stop offset=".65" stop-color="#8c77e1" />
+                            <stop offset="1" stop-color="#383b80" />
+                        </radialGradient>
+                        <radialGradient id="liquidDepth" cx="48%" cy="18%" r="90%">
+                            <stop stop-color="#a1ffe8" stop-opacity=".6" />
+                            <stop offset=".5" stop-color="#21d5bd" stop-opacity=".15" />
+                            <stop offset="1" stop-color="#004f72" stop-opacity=".8" />
+                        </radialGradient>
+                        <filter id="softGlow" x="-100%" y="-100%" width="300%" height="300%">
+                            <feGaussianBlur stdDeviation="3" />
+                        </filter>
+                        <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+                            <stop stop-color="#E4FFFF" stop-opacity=".48" />
+                            <stop offset=".28" stop-color="#5FCBFF" stop-opacity=".05" />
+                            <stop offset=".7" stop-color="#80DFFF" stop-opacity=".08" />
+                            <stop offset="1" stop-color="#D8FAFF" stop-opacity=".3" />
+                        </linearGradient>
+                        <linearGradient id="mintliquid" x1="0" y1="0" x2="1" y2="1">
+                            <stop stop-color="#8FFFE3" />
+                            <stop offset=".4" stop-color="#30E7CC" />
+                            <stop offset="1" stop-color="#04768F" />
+                        </linearGradient>
+                        <linearGradient id="purpleliquid" x1="0" y1="0" x2="1" y2="1">
+                            <stop stop-color="#E3C7FF" />
+                            <stop offset=".5" stop-color="#A08AF2" />
+                            <stop offset="1" stop-color="#4A6EE8" />
+                        </linearGradient>
+                        <linearGradient id="blueLiquid" x1="0" y1="0" x2="1" y2="1">
+                            <stop stop-color="#7ED9FF" />
+                            <stop offset="1" stop-color="#1288E3" />
+                        </linearGradient>
+                        <radialGradient id="light">
+                            <stop stop-color="#58EEDB" stop-opacity=".34" />
+                            <stop offset="1" stop-color="#58EEDB" stop-opacity="0" />
+                        </radialGradient>
+                        <filter id="blur">
+                            <feGaussianBlur stdDeviation="12" />
+                        </filter>
+                        <clipPath id="flaskclip">
+                            <path
+                                d="M334 135H408V280L544 508Q561 541 531 557Q519 565 496 565H246Q221 565 208 548Q195 532 210 505L334 280Z" />
+                        </clipPath>
+                        <clipPath id="roundclip">
+                            <path d="M85 337H216V471Q216 529 155 530Q94 529 85 471Z" />
+                        </clipPath>
+                    </defs>
+                </svg>
+                <div class="stat s1"><span class="dot"></span> مولکول‌ها، زبان جهان<strong>H₂O · CO₂ · DNA</strong>
+                </div>
+                <div class="stat s2"><span class="dot"></span> کشف در جریان است<strong>RESEARCH 01 / ∞</strong></div>
+            </div>
+        </section>
+        <footer class="bottom"><span>به احترام تلاش پژوهشگران، دانش‌آموزان و تمام دوستداران علم</span><span
+                class="latin">EXPLORE THE UNKNOWN — 2026</span></footer>
+    </main>
+    <div id="museum-root"></div>
+    <script>
+        (() => { const c = document.getElementById('particles'), ctx = c.getContext('2d'); if (!ctx) return; let w, h, dpr, particles = []; const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches; function resize() { dpr = Math.min(devicePixelRatio || 1, 2); w = c.clientWidth; h = c.clientHeight; c.width = w * dpr; c.height = h * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); particles = Array.from({ length: Math.min(95, Math.floor(w * h / 12000)) }, () => ({ x: Math.random() * w, y: Math.random() * h, r: Math.random() * 1.6 + .4, vx: (Math.random() - .5) * .24, vy: (Math.random() - .5) * .2, a: Math.random() * .5 + .15 })) } function draw() { ctx.clearRect(0, 0, w, h); for (const p of particles) { ctx.beginPath(); ctx.fillStyle = `rgba(115,219,245,${p.a})`; ctx.shadowBlur = 12; ctx.shadowColor = '#5fc9e8'; ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2); ctx.fill(); ctx.shadowBlur = 0; if (!reduce) { p.x = (p.x + p.vx + w) % w; p.y = (p.y + p.vy + h) % h } } if (!reduce) requestAnimationFrame(draw) } window.addEventListener('resize', resize, { passive: true }); resize(); draw() })();
+    </script>
+
+    <script>
+        (() => {
+            const poster = document.querySelector('.poster');
+            const screen = matchMedia('screen');
+            let frame;
+            function fitPoster() {
+                if (!screen.matches) return;
+                const viewport = window.visualViewport;
+                const width = viewport ? viewport.width : window.innerWidth;
+                const height = viewport ? viewport.height : window.innerHeight;
+                const layoutWidth = Math.max(320, width);
+                poster.style.setProperty('--poster-width', `${layoutWidth}px`);
+                poster.style.setProperty('--poster-height', `${height}px`);
+                const layoutHeight = Math.max(poster.offsetHeight, poster.scrollHeight);
+                const scale = Math.min(1, width / layoutWidth, height / layoutHeight);
+                poster.style.setProperty('--poster-scale', scale);
+                poster.style.setProperty('--poster-x', `${(width - layoutWidth * scale) / 2 + (viewport?.offsetLeft || 0)}px`);
+                poster.style.setProperty('--poster-y', `${(height - layoutHeight * scale) / 2 + (viewport?.offsetTop || 0)}px`);
+            }
+            function scheduleFit() {
+                cancelAnimationFrame(frame);
+                frame = requestAnimationFrame(fitPoster);
+            }
+            new ResizeObserver(scheduleFit).observe(poster);
+            window.addEventListener('resize', scheduleFit, { passive: true });
+            window.visualViewport?.addEventListener('resize', scheduleFit, { passive: true });
+            window.visualViewport?.addEventListener('scroll', scheduleFit, { passive: true });
+            window.addEventListener('afterprint', scheduleFit);
+            document.fonts?.ready.then(scheduleFit);
+            poster.querySelectorAll('img').forEach(img => img.addEventListener('load', scheduleFit, { once: true }));
+            fitPoster();
+        })();
+    </script>
+    <script src="interactive.js"></script>
+</body>
+
+</html>

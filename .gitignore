@@ -1,0 +1,15 @@
+# Local previews and superseded image-generation drafts
+assets/periodic-preview*.png
+assets/poster-preview*.png
+assets/poster-interactive-preview.png
+assets/scientists-preview.png
+assets/laboratory-glassware.png
+assets/glass-beaker.png
+assets/glass-flask.png
+assets/glass-tubes.png
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+
